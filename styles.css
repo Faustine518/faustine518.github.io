@@ -8,7 +8,8 @@
   --blue-pale: #c7d4da;
   --line: rgba(41, 51, 58, .17);
   --serif: Georgia, "Noto Serif SC", "Songti SC", SimSun, serif;
-  --sans: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --sans: "Avenir Next", Avenir, Futura, "Century Gothic", "Segoe UI", "Microsoft YaHei", sans-serif;
+  --zh-sans: "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", SimHei, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -27,7 +28,8 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 
 .hero { min-height: 560px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 10%; border-bottom: 1px solid var(--line); }
 .eyebrow { margin: 0 0 22px; color: var(--blue-deep); font: 600 11px/1.4 var(--sans); letter-spacing: .19em; text-transform: uppercase; }
-.hero h1 { margin: 0; font: italic 500 clamp(74px, 10vw, 140px)/.85 var(--serif); letter-spacing: -.075em; }
+.hero h1 { margin: 0; font: 500 clamp(54px, 6.5vw, 90px)/.98 var(--sans); letter-spacing: -.055em; }
+.hero .welcome { max-width: 700px; font-size: clamp(46px, 6.2vw, 82px); }
 .hero h1 span { color: var(--blue); }
 .intro { margin: 42px 0 0; color: var(--muted); font: 17px/2 var(--serif); letter-spacing: .08em; }
 .blue-study { position: relative; height: 350px; overflow: hidden; background: #b6c5cd; box-shadow: 24px 24px 0 var(--paper-deep); }
@@ -41,10 +43,20 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .page-two { left: 158px; bottom: 43px; transform: rotate(7deg); background: rgba(216,224,228,.94); }
 .blue-note { position: absolute; right: 35px; top: 35px; color: rgba(41,51,58,.68); font: italic 20px/1.15 var(--serif); letter-spacing: .02em; text-align: right; }
 
-.latest { padding: 92px 0 118px; }
+.latest, .catalogue { padding: 92px 0 118px; }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 45px; }
 .section-heading h2 { margin: 0; font: 500 30px/1.3 var(--serif); }
 .section-heading > a { color: var(--muted); font-size: 13px; }
+.catalogue .section-heading { align-items: end; }
+.catalogue .section-heading .eyebrow { margin-bottom: 10px; }
+.catalogue-note { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.work-card { display: grid; grid-template-columns: 110px 1fr 50px; gap: 25px; align-items: center; padding: 42px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.work-card:hover h3 { color: var(--blue-deep); }
+.work-index, .archive-number { color: var(--blue); font: 500 13px/1 var(--sans); letter-spacing: .12em; }
+.work-info h3 { margin: 7px 0 9px; font: 500 34px/1.25 var(--zh-sans); letter-spacing: .02em; }
+.work-info > p { margin: 0; color: var(--muted); font-family: var(--zh-sans); }
+.work-arrow { color: var(--blue); font-size: 22px; }
+.pairing { display: inline-block; margin: 0; color: var(--blue-deep); font: 600 11px/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
 .post-card { display: grid; grid-template-columns: 120px 1fr; padding: 42px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .post-number { color: var(--blue); font: italic 38px var(--serif); }
 .meta, .category { margin: 0 0 8px; color: var(--muted); font-size: 11px; letter-spacing: .12em; }
@@ -58,7 +70,7 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .page-title > p:last-child { color: var(--muted); }
 .archive-list article { display: grid; grid-template-columns: 150px 1fr 50px; gap: 28px; align-items: start; padding: 34px 0; border-top: 1px solid var(--line); }
 .archive-list article:last-child { border-bottom: 1px solid var(--line); }
-.archive-list time { color: var(--muted); font: 13px var(--serif); }
+.archive-list time { color: var(--muted); font: 13px var(--sans); }
 .archive-list h2 { margin: 0 0 7px; font: 500 28px var(--serif); }
 .archive-list h2 a:hover, .post-body h3 a:hover { color: var(--blue-deep); }
 .archive-list article p:last-child { margin: 0; color: var(--muted); }
@@ -81,6 +93,17 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .article-content p { margin: 0 0 1.7em; }
 .article-content blockquote { margin: 2.5em 0; padding: 6px 0 6px 28px; border-left: 2px solid var(--blue); color: var(--blue-deep); font-size: 21px; font-style: italic; }
 .article-end { margin-top: 70px; color: var(--blue); text-align: center; font-size: 24px; }
+.story-page { width: min(820px, calc(100% - 48px)); }
+.story-page header .pairing { margin-bottom: 22px; }
+.story-page h1 { font-family: var(--zh-sans); font-weight: 600; letter-spacing: .08em; }
+.story-page .dek { font-family: var(--zh-sans); line-height: 1.9; }
+.story-content { font-family: var(--zh-sans); font-size: 17px; line-height: 2.05; letter-spacing: .025em; }
+.story-content p { margin-bottom: 1.35em; }
+.chapter-mark { display: flex; align-items: center; gap: 22px; margin: 86px 0 48px; color: var(--blue-deep); font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+.chapter-mark:first-child { margin-top: 25px; }
+.chapter-mark::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.scene-break { margin: 42px 0; color: var(--blue); text-align: center; font-size: 12px; }
+.story-end { margin: 90px 0 20px; color: var(--blue-deep); text-align: center; font: 500 12px/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; }
 
 footer { min-height: 110px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 
@@ -94,6 +117,8 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   .page { transform: scale(.83) rotate(-9deg); transform-origin: bottom left; }
   .page-two { transform: scale(.83) rotate(7deg); }
   .post-card { grid-template-columns: 58px 1fr; }
+  .work-card { grid-template-columns: 44px 1fr 24px; gap: 14px; }
+  .work-info h3 { font-size: 28px; }
   .archive-list article { grid-template-columns: 1fr 30px; }
   .archive-list time { grid-column: 1 / -1; }
   .about-grid { grid-template-columns: 1fr; gap: 65px; }
