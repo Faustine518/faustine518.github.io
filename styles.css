@@ -52,25 +52,33 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .home-night nav .active::after { background: #8da1bb; }
 .editorial-hero { position: relative; min-height: 720px; grid-template-columns: 1.28fr .72fr; gap: 4%; border-bottom-color: rgba(231,224,213,.2); overflow: hidden; }
 .hero-art { position: relative; height: 610px; margin-left: -70px; }
-.book-stage { display: grid; place-items: center; perspective: 1800px; }
-.keepsake-book { position: relative; display: block; width: min(100%, 700px); aspect-ratio: 3 / 2; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; transform-style: preserve-3d; }
-.book-page, .book-cover { position: absolute; inset: 0; display: block; overflow: hidden; }
-.book-inside { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 55px; color: #253345; background: #e8e1d6; box-shadow: 0 24px 55px rgba(0,0,0,.35), inset 0 0 50px rgba(75,91,110,.14); }
-.book-inside::before, .book-inside::after { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(38,58,84,.4); pointer-events: none; }
-.book-inside::after { inset: 30px; border-style: dotted; border-color: rgba(38,58,84,.28); }
-.book-inside strong { position: relative; z-index: 1; font: 400 clamp(27px, 3vw, 40px)/1.2 var(--serif); letter-spacing: .12em; }
-.book-inside > span:not(.inside-ornament) { position: relative; z-index: 1; font: 14px/1.8 var(--zh-sans); letter-spacing: .12em; }
-.book-inside em { position: relative; z-index: 1; margin-top: 10px; color: #587087; font: italic 20px/1.4 var(--serif); letter-spacing: .1em; }
+.book-stage { display: grid; place-items: center; perspective: 1900px; overflow: visible; }
+.keepsake-book { position: relative; display: block; width: min(100%, 720px); height: 470px; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; transform: translateX(-25%); transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.75,.2,1); }
+.book-spread { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; opacity: 0; transform: scale(.97); transition: opacity .3s ease, transform .8s ease; }
+.book-leaf { position: relative; display: flex; overflow: hidden; flex-direction: column; align-items: center; justify-content: center; color: #253345; background: #e8e1d6; box-shadow: 0 24px 55px rgba(0,0,0,.35), inset 0 0 50px rgba(75,91,110,.14); }
+.book-leaf::before, .book-leaf::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(38,58,84,.35); pointer-events: none; }
+.book-leaf::after { inset: 28px; border-style: dotted; border-color: rgba(38,58,84,.24); }
+.left-leaf { border-radius: 5px 0 0 5px; box-shadow: 0 24px 55px rgba(0,0,0,.35), inset -25px 0 35px rgba(54,65,78,.1); }
+.right-leaf { gap: 14px; padding: 48px; border-radius: 0 5px 5px 0; box-shadow: 0 24px 55px rgba(0,0,0,.35), inset 25px 0 35px rgba(54,65,78,.1); }
+.right-leaf strong { position: relative; z-index: 1; font: 400 clamp(25px, 2.7vw, 37px)/1.2 var(--serif); letter-spacing: .12em; }
+.right-leaf > span:not(.inside-ornament) { position: relative; z-index: 1; font: 13px/1.8 var(--zh-sans); letter-spacing: .1em; }
+.right-leaf em { position: relative; z-index: 1; margin-top: 8px; color: #587087; font: italic 19px/1.4 var(--serif); letter-spacing: .1em; }
+.leaf-stars { position: relative; z-index: 1; color: #71859a; font-size: 22px; }
+.leaf-caption { position: relative; z-index: 1; margin-top: 28px; color: #5c7187; font: italic 17px/1.45 var(--serif); letter-spacing: .06em; text-align: center; }
 .inside-ornament { position: relative; z-index: 1; color: #6f8398; font-size: 17px; }
 .ornament-bottom { margin-top: 8px; }
-.book-cover { z-index: 2; transform-origin: left center; transform-style: preserve-3d; backface-visibility: hidden; transition: transform .9s cubic-bezier(.2,.75,.2,1), filter .45s ease; box-shadow: 12px 16px 35px rgba(0,0,0,.28); }
+.book-cover { position: absolute; z-index: 2; top: 0; bottom: 0; left: 50%; width: 50%; display: block; overflow: hidden; border-radius: 0 5px 5px 0; transform-origin: left center; transform-style: preserve-3d; backface-visibility: hidden; transition: transform .9s cubic-bezier(.2,.75,.2,1), filter .45s ease; box-shadow: 12px 16px 35px rgba(0,0,0,.28); }
 .book-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(.98) saturate(.9); }
 .book-cover::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(231,224,213,.12), inset -18px 0 25px rgba(0,0,0,.25); pointer-events: none; }
 .open-hint { position: absolute; left: 28px; bottom: 22px; z-index: 2; padding: 7px 10px; color: rgba(231,224,213,.75); background: rgba(20,22,25,.58); font: 9px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
-.keepsake-book.is-open .book-cover { transform: rotateY(-158deg); filter: brightness(.78); }
+.keepsake-book.is-open { transform: translateX(0); }
+.keepsake-book.is-open .book-spread { opacity: 1; transform: scale(1); }
+.keepsake-book.is-open .book-cover { transform: rotateY(-180deg); filter: brightness(.72); }
 .keepsake-book:focus-visible { outline: 1px solid #aebdd0; outline-offset: 8px; }
 @media (hover: hover) and (pointer: fine) {
-  .keepsake-book:hover .book-cover { transform: rotateY(-158deg); filter: brightness(.78); }
+  .keepsake-book:hover { transform: translateX(0); }
+  .keepsake-book:hover .book-spread { opacity: 1; transform: scale(1); }
+  .keepsake-book:hover .book-cover { transform: rotateY(-180deg); filter: brightness(.72); }
 }
 .night-copy { position: relative; z-index: 2; padding: 65px 0 45px; }
 .night-copy .eyebrow { color: #9dafc4; }
@@ -132,6 +140,21 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .prose p { margin: 0 0 25px; }
 .prose .lead { font-size: 27px; }
 .signature { padding-top: 20px; color: var(--blue-deep); font-style: italic; }
+.about-japanese { padding: 18px 0 0; color: var(--muted); font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; font-size: 12px; line-height: 2; letter-spacing: .08em; border-top: 1px solid var(--line); }
+
+/* horizontal newspaper archive */
+.newspaper-page { background: #e7e7e2; color: #20262b; }
+.newspaper-shell { width: min(980px, calc(100% - 48px)); }
+.newspaper-head { margin-bottom: 58px; text-align: center; border-bottom: 4px double #29333a; }
+.paper-kicker { margin: 0 0 12px; font: 600 10px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.newspaper-head h1 { margin: 0 0 22px; font: 500 clamp(54px, 9vw, 94px)/.95 var(--serif); letter-spacing: .12em; }
+.paper-rule { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid #29333a; font: 10px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+.newspaper-list { border-top: 1px solid #29333a; }
+.newspaper-row { display: grid; grid-template-columns: 70px minmax(0, 1fr) 42px; align-items: center; min-height: 112px; border-bottom: 1px solid #29333a; }
+.news-number { font: 500 11px/1 var(--sans); letter-spacing: .16em; }
+.newspaper-row h2 { min-width: 0; margin: 0; font: 600 clamp(30px, 5vw, 48px)/1.2 var(--zh-sans); letter-spacing: .12em; white-space: nowrap; }
+.news-arrow { justify-self: end; font-size: 22px; }
+.newspaper-row:hover h2 { font-style: italic; }
 
 .article-shell { width: min(760px, calc(100% - 48px)); padding: 70px 0 120px; }
 .back { display: inline-block; margin-bottom: 85px; color: var(--muted); font-size: 13px; }
@@ -175,11 +198,12 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   footer { padding: 24px 0; display: block; }
   .editorial-hero { min-height: auto; gap: 0; padding-top: 32px; }
   .hero-art { height: 430px; margin: 0 -16px; order: 2; }
-  .keepsake-book { width: calc(100% - 24px); }
-  .book-inside { padding: 35px; gap: 9px; }
-  .book-inside strong { font-size: clamp(23px, 7vw, 32px); }
-  .book-inside > span:not(.inside-ornament) { font-size: 12px; }
-  .book-inside em { font-size: 17px; }
+  .keepsake-book { width: calc(100% - 10px); height: 300px; }
+  .right-leaf { padding: 24px; gap: 8px; }
+  .right-leaf strong { font-size: clamp(19px, 5.8vw, 27px); }
+  .right-leaf > span:not(.inside-ornament) { font-size: 10px; letter-spacing: .04em; }
+  .right-leaf em { font-size: 14px; }
+  .leaf-caption { font-size: 13px; }
   .open-hint { left: 18px; bottom: 16px; }
   .night-copy { padding: 30px 0 0; order: 1; }
   .hero .night-copy .welcome { font-size: clamp(46px, 15vw, 72px); }
@@ -188,6 +212,11 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   .spark-b { display: none; }
   .night-catalogue { padding-top: 80px; }
   .paper-card { padding: 34px 24px; box-shadow: 9px 10px 0 var(--night-blue); }
+  .newspaper-shell { width: min(100% - 28px, 980px); padding-top: 52px; }
+  .newspaper-head { margin-bottom: 38px; }
+  .newspaper-head h1 { font-size: 54px; }
+  .newspaper-row { grid-template-columns: 42px minmax(0, 1fr) 28px; min-height: 88px; }
+  .newspaper-row h2 { font-size: clamp(27px, 9vw, 38px); letter-spacing: .08em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
