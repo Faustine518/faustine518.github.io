@@ -176,21 +176,22 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .archive-masthead { border-top: 1px solid rgba(233,225,213,.5); border-bottom: 4px double rgba(233,225,213,.7); text-align: center; }
 .archive-masthead > p { margin: 11px 0 20px; color: #9dafc4; font: 600 10px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; }
 .archive-masthead h1 { display: flex; align-items: baseline; justify-content: center; gap: .16em; margin: 0 0 30px; line-height: .9; }
-.toc-zh { font-family: "Songti SC", STSong, "Noto Serif SC", SimSun, serif; font-size: clamp(62px, 9vw, 112px); font-weight: 500; letter-spacing: .14em; text-shadow: 1px 1px 0 rgba(157,175,196,.35); }
+.toc-zh { font-family: KaiTi, STKaiti, "FZKai-Z03", "Songti SC", STSong, serif; font-size: clamp(62px, 9vw, 112px); font-weight: 400; letter-spacing: .1em; text-shadow: 1px 1px 0 rgba(157,175,196,.35); }
 .toc-divider { color: #71869e; font: 300 clamp(38px, 5vw, 62px)/1 "Bodoni 72", Didot, serif; transform: translateY(-.06em); }
-.toc-en { color: #d9d3ca; font: italic 400 clamp(50px, 7.2vw, 92px)/.8 "Bodoni 72", Didot, Baskerville, Georgia, serif; letter-spacing: -.035em; }
+.toc-en { color: #d9d3ca; font: italic 400 clamp(50px, 7.2vw, 92px)/.8 "Bodoni 72", Didot, "Baskerville Display PT", Baskerville, Georgia, serif; letter-spacing: -.045em; }
 .archive-masthead > div { display: flex; justify-content: space-between; padding: 9px 2px; border-top: 1px solid rgba(233,225,213,.35); color: #c8c1b7; font: 10px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
 .archive-gallery { display: grid; grid-template-columns: .92fr 1.08fr; gap: 42px; align-items: start; padding: 70px 20px 60px; }
 .archive-clipping { position: relative; min-width: 0; min-height: 420px; display: flex; flex-direction: column; justify-content: space-between; padding: 38px; color: #27313a; background: #e9e1d5; box-shadow: 17px 18px 0 #263a54; transition: transform .25s ease, box-shadow .25s ease; }
 .archive-clipping::before { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(39,49,58,.28); pointer-events: none; }
 .archive-clipping::after { content: ""; position: absolute; top: -13px; left: 50%; width: 105px; height: 28px; background: rgba(184,177,163,.7); transform: translateX(-50%) rotate(-2deg); opacity: .62; }
+.clipping-ornament { position: absolute; top: 27px; right: 34px; color: rgba(64,91,108,.5); font: 28px/1 Georgia, serif; }
 .archive-clipping:hover { transform: translateY(-7px) rotate(0); box-shadow: 23px 26px 0 #263a54; }
 .clipping-spring { margin-top: 42px; transform: rotate(-1deg); }
 .clipping-cocoa { background: #d8d4ce; box-shadow: 17px 18px 0 #4a3040; transform: rotate(.8deg); }
 .clipping-cocoa:hover { box-shadow: 23px 26px 0 #4a3040; }
 .clipping-number { color: #71889c; font: italic 39px/1 var(--serif); }
 .clipping-copy .pairing { color: #405b6c; }
-.clipping-copy h2 { margin: 15px 0 18px; font: 600 clamp(36px, 5vw, 64px)/1.12 var(--zh-sans); letter-spacing: .08em; }
+.clipping-copy h2 { margin: 15px 0 18px; font: 500 clamp(36px, 5vw, 64px)/1.12 "Songti SC", STSong, "Noto Serif SC", SimSun, serif; letter-spacing: .08em; }
 .clipping-copy p { max-width: 420px; margin: 0; color: #5d6870; font: 14px/1.9 var(--zh-sans); }
 .clipping-read { align-self: flex-end; margin-top: 45px; color: #405b6c; font: 600 9px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
 .archive-footnote { margin: 0; color: #aaa49b; font: 13px/1.8 var(--zh-sans); letter-spacing: .12em; text-align: center; }
@@ -283,17 +284,27 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   .newspaper-head h1 { font-size: 54px; }
   .newspaper-row { grid-template-columns: 42px minmax(0, 1fr) 28px; min-height: 88px; }
   .newspaper-row h2 { font-size: clamp(27px, 9vw, 38px); letter-spacing: .08em; }
-  .archive-editorial { width: min(100% - 28px, 1050px); padding-top: 52px; }
+  .archive-editorial { width: min(100% - 24px, 1050px); padding-top: 42px; }
   .archive-night .site-header nav, .cocoa-story .site-header nav { gap: 14px; }
   .archive-masthead > p { white-space: normal; line-height: 1.6; }
   .archive-masthead > div { gap: 16px; }
-  .archive-masthead h1 { gap: .08em; }
-  .toc-zh { font-size: clamp(42px, 12.5vw, 54px); letter-spacing: .08em; }
-  .toc-divider { font-size: clamp(24px, 7vw, 32px); }
-  .toc-en { font-size: clamp(39px, 11.5vw, 50px); }
-  .archive-gallery { grid-template-columns: 1fr; gap: 36px; padding: 55px 8px 65px; }
-  .archive-clipping, .clipping-spring, .clipping-cocoa { min-height: 335px; margin-top: 0; padding: 32px 28px; transform: rotate(0); }
-  .clipping-copy h2 { font-size: clamp(35px, 11vw, 49px); white-space: normal; }
+  .archive-masthead { position: relative; padding-top: 8px; }
+  .archive-masthead::before, .archive-masthead::after { content: "✦"; position: absolute; top: 50%; color: rgba(157,175,196,.6); font-size: 10px; }
+  .archive-masthead::before { left: 8px; }
+  .archive-masthead::after { right: 8px; }
+  .archive-masthead h1 { gap: .08em; margin-bottom: 24px; }
+  .toc-zh { font-size: clamp(42px, 12vw, 52px); letter-spacing: .04em; }
+  .toc-divider { font-size: clamp(22px, 6vw, 28px); }
+  .toc-en { font-size: clamp(36px, 10.5vw, 46px); }
+  .archive-gallery { grid-template-columns: 1fr; gap: 32px; padding: 52px 6px 62px; }
+  .archive-clipping, .clipping-spring, .clipping-cocoa { min-height: 310px; margin-top: 0; padding: 34px 30px; transform: rotate(-.35deg); box-shadow: 10px 12px 0 #263a54; }
+  .clipping-cocoa { transform: rotate(.35deg); box-shadow: 10px 12px 0 #4a3040; }
+  .archive-clipping::before { inset: 7px; border-style: double; border-width: 3px; }
+  .archive-clipping::after { width: 82px; height: 22px; top: -10px; }
+  .clipping-number { font-size: 33px; }
+  .clipping-ornament { top: 25px; right: 27px; font-size: 24px; }
+  .clipping-copy h2 { font-size: clamp(38px, 12vw, 52px); font-weight: 500; white-space: normal; }
+  .clipping-copy p { font-family: "Songti SC", STSong, SimSun, serif; font-size: 13px; }
   .cocoa-shell { width: min(100% - 30px, 940px); }
   .cocoa-hero { min-height: auto; grid-template-columns: 1fr; padding-top: 45px !important; }
   .cocoa-title { padding: 0 8px; }
