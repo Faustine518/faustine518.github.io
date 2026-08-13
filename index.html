@@ -19,8 +19,20 @@
 
   <main>
     <section class="hero editorial-hero">
-      <div class="hero-art" aria-hidden="true">
-        <img src="assets/nocturne-lace-bird.jpg" alt="">
+      <div class="hero-art book-stage">
+        <button class="keepsake-book" type="button" aria-expanded="false" aria-label="打开夜读小书">
+          <span class="book-page book-inside" aria-hidden="true">
+            <span class="inside-ornament">✦</span>
+            <strong>感谢阅读</strong>
+            <span>只是一些很平凡的文字</span>
+            <em>祝阅读愉快</em>
+            <span class="inside-ornament ornament-bottom">✧</span>
+          </span>
+          <span class="book-cover">
+            <img src="assets/nocturne-lace-bird.jpg" alt="蕾丝框中的黑鸟与花枝插画">
+            <span class="open-hint">hover / click to open</span>
+          </span>
+        </button>
       </div>
       <div class="hero-copy night-copy">
         <p class="eyebrow">an archive after dusk</p>
@@ -53,5 +65,20 @@
     <p>© 2026 faustine</p>
     <p>read in your own order</p>
   </footer>
+  <script>
+    const book = document.querySelector('.keepsake-book');
+    book.addEventListener('click', () => {
+      const open = book.classList.toggle('is-open');
+      book.setAttribute('aria-expanded', String(open));
+      book.setAttribute('aria-label', open ? '合上夜读小书' : '打开夜读小书');
+    });
+    book.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        book.classList.remove('is-open');
+        book.setAttribute('aria-expanded', 'false');
+        book.setAttribute('aria-label', '打开夜读小书');
+      }
+    });
+  </script>
 </body>
 </html>
