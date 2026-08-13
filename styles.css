@@ -1,6 +1,4 @@
-Exit code: 0
-Wall time: 0.8 seconds
-Output:
+
 :root {
   --paper: #edf0f1;
   --paper-deep: #d8e0e4;
@@ -104,6 +102,12 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .paper-card .pairing { color: var(--blue-deep); }
 .paper-card .work-index { color: #637c91; }
 .paper-card .work-arrow { color: var(--blue-deep); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.home-night .night-catalogue .paper-card { color: #29333a; }
+.home-night .night-catalogue .paper-card .work-info h3 { color: #29333a; }
+.home-night .night-catalogue .paper-card .work-info > p { color: #5d6870; }
+.home-night .night-catalogue .paper-card .pairing,
+.home-night .night-catalogue .paper-card .work-arrow { color: #405b6c; }
+.home-night .night-catalogue .paper-card:hover .work-info h3 { color: #405b6c; }
 .home-night footer { border-top-color: rgba(231,224,213,.2); color: var(--ivory-soft); }
 
 .latest, .catalogue { padding: 92px 0 118px; }
