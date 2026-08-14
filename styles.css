@@ -227,9 +227,9 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .story-edition { margin: 45px 0 18px; color: var(--cocoa-blue); font: 600 9px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
 .cocoa-shell .cocoa-title h1 { margin: 0; color: #28292a; font: 600 clamp(52px, 8vw, 84px)/1.03 var(--zh-sans); letter-spacing: .06em; }
 .cocoa-title .dek { margin: 25px 0 0; color: #6b6661; font: 14px/1.9 var(--zh-sans); letter-spacing: .08em; }
-.cocoa-portrait { position: relative; align-self: end; margin: 0 -90px -52px -45px; }
+.cocoa-portrait { position: relative; min-width: 0; align-self: end; margin: 0 -90px -52px -45px; }
 .cocoa-portrait::before { content: ""; position: absolute; z-index: -1; inset: 18% 8% 5% 18%; border-radius: 50%; background: rgba(123,95,105,.12); filter: blur(2px); }
-.cocoa-portrait img { display: block; width: 100%; max-height: 540px; object-fit: contain; object-position: bottom center; }
+.cocoa-portrait img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 540px; object-fit: contain; object-position: bottom center; }
 .chapter-ribbon { position: static; display: flex; gap: 5px; overflow-x: auto; margin: 30px 0 76px; padding: 10px; background: transparent; border-top: 1px solid rgba(41,42,43,.18); border-bottom: 1px solid rgba(41,42,43,.18); scrollbar-width: thin; }
 .chapter-ribbon a { flex: 0 0 auto; min-width: 36px; padding: 8px 10px; color: #65717a; font: 600 9px/1 var(--sans); letter-spacing: .12em; text-align: center; }
 .chapter-ribbon a:hover, .chapter-ribbon a.active { color: #fff; background: var(--cocoa-red); }
@@ -312,8 +312,8 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   .cocoa-shell { width: min(100% - 30px, 940px); }
   .cocoa-hero { min-height: auto; grid-template-columns: 1fr; padding-top: 45px !important; }
   .cocoa-title { padding: 0 8px; }
-  .cocoa-portrait { width: calc(100% + 72px); margin: -20px -72px -50px 0; opacity: .87; }
-  .cocoa-portrait img { max-height: 410px; object-position: right bottom; }
+  .cocoa-portrait { width: 100%; margin: -20px 0 -50px; padding-right: 28px; opacity: .87; }
+  .cocoa-portrait img { width: 84%; margin-inline: auto; max-height: 410px; object-position: center bottom; }
   .chapter-ribbon { margin-bottom: 55px; }
   .cocoa-content .chapter-mark { margin: 0 0 40px; }
   .chapter-turn { margin-top: 60px; }
