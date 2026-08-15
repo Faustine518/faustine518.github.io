@@ -51,9 +51,9 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .home-night nav a:hover, .home-night nav .active { color: #fff; }
 .home-night nav .active::after { background: #8da1bb; }
 .editorial-hero { position: relative; min-height: 720px; grid-template-columns: 1.28fr .72fr; gap: 4%; border-bottom-color: rgba(231,224,213,.2); overflow: hidden; }
-.hero-art { position: relative; height: 610px; margin-left: -70px; }
-.book-stage { display: grid; place-items: center; perspective: 1900px; overflow: visible; }
-.keepsake-book { position: relative; display: block; width: min(100%, 720px); height: 470px; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; transform: translateX(-25%); transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.75,.2,1); }
+.hero-art { position: relative; height: 610px; margin-left: 0; }
+.book-stage { display: grid; place-items: center; padding-inline: 10px; perspective: 1900px; overflow: visible; }
+.keepsake-book { position: relative; display: block; width: min(94%, 620px); height: 430px; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; transform: translateX(-25%); transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.75,.2,1); }
 .book-spread { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; opacity: 0; transform: scale(.97); transition: opacity .3s ease, transform .8s ease; }
 .book-leaf { position: relative; display: flex; overflow: hidden; flex-direction: column; align-items: center; justify-content: center; color: #253345; background: #e8e1d6; box-shadow: 0 24px 55px rgba(0,0,0,.35), inset 0 0 50px rgba(75,91,110,.14); }
 .book-leaf::before, .book-leaf::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(38,58,84,.35); pointer-events: none; }
@@ -122,6 +122,9 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .work-info h3 { margin: 7px 0 9px; font: 500 34px/1.25 var(--zh-sans); letter-spacing: .02em; }
 .work-info > p { margin: 0; color: var(--muted); font-family: var(--zh-sans); }
 .work-arrow { color: var(--blue); font-size: 22px; }
+.night-catalogue .paper-card { grid-template-columns: 72px minmax(0, 1fr) 96px; gap: 22px; padding: 42px 30px; }
+.night-catalogue .paper-card .work-index { justify-self: center; }
+.night-catalogue .paper-card .work-arrow { display: inline-flex; align-items: center; justify-self: end; gap: .55em; white-space: nowrap; }
 .pairing { display: inline-block; margin: 0; color: var(--blue-deep); font: 600 11px/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
 .post-card { display: grid; grid-template-columns: 120px 1fr; padding: 42px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .post-number { color: var(--blue); font: italic 38px var(--serif); }
@@ -227,7 +230,7 @@ nav .active::after { content: ""; position: absolute; left: 0; right: 0; bottom:
 .story-edition { margin: 45px 0 18px; color: var(--cocoa-blue); font: 600 9px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
 .cocoa-shell .cocoa-title h1 { margin: 0; color: #28292a; font: 600 clamp(52px, 8vw, 84px)/1.03 var(--zh-sans); letter-spacing: .06em; }
 .cocoa-title .dek { margin: 25px 0 0; color: #6b6661; font: 14px/1.9 var(--zh-sans); letter-spacing: .08em; }
-.cocoa-portrait { position: relative; min-width: 0; align-self: end; margin: 0 -90px -52px -45px; }
+.cocoa-portrait { position: relative; min-width: 0; align-self: end; margin: 0 0 -52px; padding-right: 20px; }
 .cocoa-portrait::before { content: ""; position: absolute; z-index: -1; inset: 18% 8% 5% 18%; border-radius: 50%; background: rgba(123,95,105,.12); filter: blur(2px); }
 .cocoa-portrait img { display: block; width: 100%; max-width: 100%; height: auto; max-height: 540px; object-fit: contain; object-position: bottom center; }
 .chapter-ribbon { position: static; display: flex; gap: 5px; overflow-x: auto; margin: 30px 0 76px; padding: 10px; background: transparent; border-top: 1px solid rgba(41,42,43,.18); border-bottom: 1px solid rgba(41,42,43,.18); scrollbar-width: thin; }
@@ -278,6 +281,7 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
   .spark-b { display: none; }
   .night-catalogue { padding-top: 80px; }
   .paper-card { padding: 34px 24px; box-shadow: 9px 10px 0 var(--night-blue); }
+  .night-catalogue .paper-card { grid-template-columns: 38px minmax(0, 1fr) 56px; gap: 10px; padding: 34px 18px; }
   .newspaper-shell { width: min(100% - 28px, 980px); padding-top: 52px; }
   .newspaper-head { margin-bottom: 38px; }
   .newspaper-head h1 { font-size: 54px; }
@@ -322,3 +326,4 @@ footer { min-height: 110px; display: flex; align-items: center; justify-content:
 @media (prefers-reduced-motion: reduce) {
   .book-cover { transition-duration: .01ms; }
 }
+
